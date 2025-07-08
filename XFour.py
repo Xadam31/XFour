@@ -9,15 +9,15 @@ def home():
 # Include any other routes here (like /about, /daily, etc.)
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    return render_template("XCalc/templates/index.html")
 @app.route("/learnpython")
 def learnpython():
-    return render_template("learnpython.html")
+    return render_template("codeteacher/learnpython.html")
 @app.route("/daily")
 def daily():
-    return render_template("daily.html")
+    return render_template("randomtod/templates/daily.html")
 @app.route("/rpgfront")
 def rpgfront():
-    return render_template("rpgfront.html")
+    return render_template("rpggame/templates/rpgfront.html")
 if __name__ == "__main__":
     app.run()
