@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - XCalc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #6200ea;
+    }
+
+    h1, h2 {
+      color: #bb86fc;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    ul {
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #7b1fa2, #512da8);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-link:hover {
+      background-color: #3700b3;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* Consent Banner */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      display: none;
+      z-index: 9999;
+      border-top: 2px solid #bb86fc;
+    }
+
+    #cookie-banner button {
+      margin-left: 1em;
+      background-color: #6200ea;
+      border: none;
+      padding: 8px 16px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>About XCalc</h1>
+    <p>
+      Welcome to <strong>XCalc</strong> — your sleek and powerful browser-based calculator.
+      Whether you’re tackling schoolwork, solving day-to-day problems, or just want quick math done fast — XCalc is here.
+    </p>
+
+    <h2>Key Features:</h2>
+    <ul>
+      <li>2-number and 3-number expressions</li>
+      <li>Supports +, -, ×, ÷ operations</li>
+      <li>Instant calculation history</li>
+      <li>Dark mode & light mode support</li>
+      <li>Responsive for mobile and desktop</li>
+    </ul>
+
+    <h2>Why It Exists:</h2>
+    <p>
+      XCalc was built from scratch as a learning project and evolved into a full-featured tool.
+      It combines simplicity with performance — with more features to come!
+    </p>
+
+    <div class="center">
+      <a href="/" class="button-link">🔙 Go to Calculator</a>
+    </div>
+  </div>
+
+  <!-- Consent Banner -->
+  <div id="cookie-banner">
+    This site uses cookies to serve ads and analyze traffic. By continuing, you consent to this use.
+    <button onclick="acceptCookies()">Accept</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      localStorage.setItem("cookieConsent", "true");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    window.onload = function () {
+      if (!localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-banner").style.display = "block";
+      }
+    };
+  </script>
+</body>
+</html>
