@@ -7,7 +7,7 @@ def home():
     return render_template("hub.html")
 
 # Include any other routes here (like /about, /daily, etc.)
-@app.route("/index")
+@app.route("/index", methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 @app.route("/learnpython")
