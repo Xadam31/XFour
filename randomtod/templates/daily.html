@@ -41,11 +41,19 @@
   </style>
 </head>
 <body>
+  <a href="/hub.html">
+    <button style="  background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #ff4d4d;
+      color: #ffe6e6;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);">back to home</button>
+  </a>
   <div class="container">
     <h1>🧠 Daily Python Quiz</h1>
     {% if score is not none %}
       <p><strong>You scored {{ score }}/3!</strong></p>
-      <a href="/">🔙 Back to Home</a>
+     
     {% else %}
     <form method="POST">
       {% for q in questions %}
@@ -62,6 +70,7 @@
       <input type="submit" value="Submit Answers">
     </form>
     {% endif %}
+    
   </div>
 </body>
 </html>
