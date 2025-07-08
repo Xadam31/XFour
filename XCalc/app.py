@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 history = []
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/index", methods=["GET", "POST"])
 def calculator():
     result = None
     error = None
