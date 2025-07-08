@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("hub.html")
 
 # Include any other routes here (like /about, /daily, etc.)
 
