@@ -112,6 +112,12 @@ def daily():
 @app.route("/rpgfront")
 def rpgfront():
     return render_template("rpgfront.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
+@app.route("/patch.notes")
+def patch_notes():
+    return render_template("patch.html")
 
 if __name__ == "__main__":
     app.run()
