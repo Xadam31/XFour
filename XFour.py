@@ -2,15 +2,14 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+history = []
+
 @app.route("/")
 def home():
     return render_template("hub.html")
 
-# Include any other routes here (like /about, /daily, etc.)
 @app.route("/index", methods=["GET", "POST"])
 def index():
-    return render_template("index.html")
-def calculator():
     result = None
     error = None
 
@@ -47,9 +46,7 @@ def calculator():
                 op1 = request.form["op1"]
                 op2 = request.form.get("op2")
 
-                # One or two operators?
                 if op2:
-                    # Two operators
                     if op1 == "+":
                         temp = num1 + num2
                     elif op1 == "-":
@@ -59,28 +56,28 @@ def calculator():
                     elif op1 == "/":
                         if num2 == 0:
                             error = "Cannot divide by zero."
-                            return render_template("index.html", error=error, history=history)
-                        temp = num1 / num2
+                        else:
+                            temp = num1 / num2
 
-                    if op2 == "+":
-                        result = temp + num3
-                    elif op2 == "-":
-                        result = temp - num3
-                    elif op2 == "*":
-                        result = temp * num3
-                    elif op2 == "/":
-                        if num3 == 0:
-                            error = "Cannot divide by zero."
-                            return render_template("index.html", error=error, history=history)
-                        result = temp / num3
-                    else:
-                        error = "Invalid second operator"
-                    
+                    if error is None:
+                        if op2 == "+":
+                            result = temp + num3
+                        elif op2 == "-":
+                            result = temp - num3
+                        elif op2 == "*":
+                            result = temp * num3
+                        elif op2 == "/":
+                            if num3 == 0:
+                                error = "Cannot divide by zero."
+                            else:
+                                result = temp / num3
+                        else:
+                            error = "Invalid second operator"
+
                     if result is not None and error is None:
                         entry = f"{num1} {op1} {num2} {op2} {num3} = {result}"
                         history.append(entry)
                 else:
-                    # One operator applied to all three
                     if op1 == "+":
                         result = num1 + num2 + num3
                     elif op1 == "-":
@@ -103,14 +100,18 @@ def calculator():
             error = "Error: " + str(e)
 
     return render_template("index.html", result=result, error=error, history=history)
+
 @app.route("/learnpython")
 def learnpython():
     return render_template("learnpython.html")
+
 @app.route("/daily")
 def daily():
     return render_template("daily.html")
+
 @app.route("/rpgfront")
 def rpgfront():
     return render_template("rpgfront.html")
+
 if __name__ == "__main__":
     app.run()
