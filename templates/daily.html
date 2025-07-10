@@ -2,75 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Daily Python Quiz</title>
+  <title>Daily Quiz</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #e0e0e0;
-      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      font-family: sans-serif;
       padding: 20px;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #1e1e1e;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px red;
+    .question {
+      margin-bottom: 20px;
     }
-    h1 {
-      color: #ff4b4b;
-      text-align: center;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input[type="submit"] {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #ff0000;
-      border: none;
+    button {
+      padding: 10px 20px;
+      background: #6200ea;
       color: white;
-      border-radius: 5px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
-    input[type="submit"]:hover {
-      background-color: #cc0000;
+    button:hover {
+      background: #3700b3;
+    }
+    .score {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #03dac6;
     }
   </style>
 </head>
 <body>
-  <a href="/">
-    <button style="  background-color: #1a1a1a;
-      padding: 15px;
-      border-radius: 10px;
-      border-left: 4px solid #ff4d4d;
-      color: #ffe6e6;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);">back to home</button>
-  </a>
-  <div class="container">
-    <h1>🧠 Daily Python Quiz</h1>
-    {% if score is not none %}
-      <p><strong>You scored {{ score }}/3!</strong></p>
-     
-    {% else %}
-    <form method="POST">
-      {% for q in questions %}
-        <div>
-          <p><strong>{{ loop.index }}. {{ q.question }}</strong></p>
-          {% for option in q.options %}
-            <label>
-              <input type="radio" name="q{{ loop.index0 }}" value="{{ option }}" required>
-              {{ option }}
-            </label>
-          {% endfor %}
-        </div>
-      {% endfor %}
-      <input type="submit" value="Submit Answers">
-    </form>
-    {% endif %}
-    
-  </div>
+  <h1>🧠 Daily Python Quiz</h1>
+
+  <form method="POST">
+    {% for q in questions %}
+  {% set i = loop.index0 %}
+
+      <div class="question">
+        <strong>Q{{ i+1 }}: {{ q.question }}</strong><br>
+        {% for opt in q.options %}
+          <label>
+            <input type="radio" name="q{{ i }}" value="{{ opt }}" required> {{ opt }}
+          </label><br>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit">Submit Answers</button>
+  </form>
+
+  {% if score is not none %}
+    <div class="score">
+      ✅ You scored {{ score }} out of {{ questions|length }}!
+    </div>
+  {% endif %}
+
+  <br>
+  <a href="/"><button>← Back to Home</button></a>
 </body>
 </html>
