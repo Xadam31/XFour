@@ -155,7 +155,7 @@ def daily():
         {
             "question": " how to make an if condition?",
             "options": ["if:code", "if rule:code", "f rule:code", "else rule:code"],
-            "answer": "def"
+            "answer": "if rule:code"
         },
         {
             "question": "What type are variables by default?",
