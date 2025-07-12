@@ -179,6 +179,9 @@ def daily():
 def learnpython():
     return render_template("learnpython.html")
 
+@app.route("/aboutm")
+def aboutm():
+    return render_template("mainabout.html")
 
 
 @app.route("/about")
