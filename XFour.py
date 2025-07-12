@@ -148,17 +148,17 @@ def rpgfront():
 def daily():
     questions = [
         {
-            "question": "What is the output of print(2 ** 3)?",
-            "options": ["5", "6", "8", "9"],
-            "answer": "8"
+            "question": "What is the output of print(7 ** 5)?",
+            "options": ["45", "46", "81", "49"],
+            "answer": "45"
         },
         {
-            "question": "Which keyword is used to create a function in Python?",
-            "options": ["func", "def", "function", "lambda"],
+            "question": " how to make an if condition?",
+            "options": ["if:code", "if rule:code", "f rule:code", "else rule:code"],
             "answer": "def"
         },
         {
-            "question": "What type does input() return by default?",
+            "question": "What type are variables by default?",
             "options": ["int", "str", "bool", "float"],
             "answer": "str"
         }
