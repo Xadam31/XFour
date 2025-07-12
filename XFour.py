@@ -121,25 +121,34 @@ def rpgfront():
                 output += f"{name} threw a ball and dealt 45 damage!<br>"
                 output += "Terry used Focus + Ball Throw, dealt 60 damage.<br>"
                 output += f"{name}: HP 40, Stamina 45<br>Master Terry: HP 55, Stamina 30<br>"
+                if choice3 == "1":
+                 output += f"{name} used Ball Throw and dealt 45 damage!<br>"
+                 output += f"Terry now has 10 HP ,He used Focus+Ball Throw and dealt 60 dmg {name} had 40 HP and ended up with under 0 {name} lost<br>"
+                 output += f"Game over {name} x_x<br>"
+                elif choice3 == "2":
+                 output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
+                 output += "Terry had 55 HP and collapsed. 💥<br>"
+                 output += f"🎉 {name} is victorious over Terry! 🎉<br>"
             elif choice2 == "2":
                 output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
                 output += "Terry did the same. Both have HP 40, Stamina 30.<br>"
+                if choice3 == "1":
+                 output += f"{name} used Ball Throw and dealt 45 damage!<br>"
+                 output += "Terry had 40 HP and collapsed. 🎉<br>"
+                 output += f"🎊 Congratulations {name}, you beat Terry! 🎊<br>"
+            elif choice3 == "2":
+                 output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
+                 output += "Terry had 40 HP and collapsed. 💥<br>"
+                 output += f"🎉 {name} is victorious over Terry! 🎉<br>"
             else:
                 output += "Invalid move selection.<br>"
 
-            if choice3 == "1":
-                output += f"{name} used Ball Throw and dealt 45 damage!<br>"
-                output += "Terry had 40 HP and collapsed. 🎉<br>"
-                output += f"🎊 Congratulations {name}, you beat Terry! 🎊<br>"
-            elif choice3 == "2":
-                output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
-                output += "Terry had 40 HP and collapsed. 💥<br>"
-                output += f"🎉 {name} is victorious over Terry! 🎉<br>"
 
-            output += "<br><strong>Final battle coming soon!</strong>"
+            output += "stay tuned next arena in 7/14/2025"
+            
 
         elif choice1 == "2":
-            output += "Skipping tutorial... update coming soon!"
+            output += "Skipping tutorial... Stay tuned i fixed all bugs here the update releasing in 7/14/2025"
         else:
             output += "Invalid choice for tutorial."
 
