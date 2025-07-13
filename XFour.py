@@ -200,6 +200,9 @@ def about():
 @app.route("/patch.notes")
 def patch_notes():
     return render_template("patch.html")
+@app.route("/mpatch.notes")
+def patchnotesm():
+    return render_template("mainpatch.html")
 
 if __name__ == "__main__":
     app.run()
