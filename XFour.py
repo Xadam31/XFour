@@ -157,18 +157,18 @@ def rpgfront():
 def daily():
     questions = [
         {
-            "question": "What is the output of print(7 ** 5)?",
-            "options": ["45", "46", "81", "49"],
-            "answer": "45"
+            "question": "How to print the type of a variable",
+            "options": ["print(type(x))", "print(x(type))", "print(x=type)", "print(xtype)"],
+            "answer": "print(type(x))"
         },
         {
-            "question": " how to make an if condition?",
-            "options": ["if:code", "if rule:code", "f rule:code", "else rule:code"],
-            "answer": "if rule:code"
+            "question": " how to make an else if?",
+            "options": ["else if:code", "elif rule:code", "elseif rule:code", "else:code"],
+            "answer": "elif rule:code"
         },
         {
-            "question": "What type are variables by default?",
-            "options": ["int", "str", "bool", "float"],
+            "question": "What is the string variable type?",
+            "options": ["it is a type that represents words and typed like this x = 'anything here'", "it is a type that represents numbers and typed like x = any number here", "it is a type that is used to represent numbers entirely and typed like x = any number.any number from 0 to 9", ""],
             "answer": "str"
         }
     ]
