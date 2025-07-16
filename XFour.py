@@ -149,7 +149,7 @@ def rpgfront():
 
             
 
-    elif choice1 == "2":
+    elif choice1 == '2':
             output += "Skipping tutorial.. <a href=""/rpgwone""><button>Go to starter place</button></a>"
     else:
             output += "Invalid choice for tutorial."
