@@ -144,15 +144,122 @@ def rpgfront():
                 output += "Invalid move selection.<br>"
 
 
-            output += "stay tuned next arena in 7/14/2025"
+            output += "<a href="/"><button>Go to starter place</button></a>"
             
 
         elif choice1 == "2":
-            output += "Skipping tutorial... Stay tuned i fixed all bugs here the update releasing in 7/14/2025"
+            output += "Skipping tutorial.. <a href="/"><button>Go to starter place</button></a>"
         else:
             output += "Invalid choice for tutorial."
 
     return render_template("rpgfront.html", output=output)
+@app.route("/rpgwone", methods=["GET", "POST"])
+def rpgwone():
+    output = ""
+    if request.method == "POST":
+        Choice1 = request.form.get("choice1", "")
+        Choice2 = request.form.get("choice2", "")
+        output += "This is a serious fight. Your attacks have to be good."
+        output += "Player stats: 150 HP 70 Stamina. phrase: I am unstoppable"
+        output += "Enemy stats: 150 HP 70 Stamina. You wont get to my king."
+        if Choice1 == 1:
+            output += "Player used slash and dealt 75 damge"
+            output += "Enemy used Focus+Slash(stone sword) and dealt 120 damge"
+            output += "Player stats: 30 HP 70 stamina. you will see Enemy stats: 75 HP 55 Stamina. LOSER You wont get to my king"
+            if Choice2 == 1:
+                output += "Player used slash and dealt 75 damge"
+                output += "Enemy had 75 HP,ended up with 0 and died "
+                output += "Well that was Easy Earned:weapons:stone sword abilities: Parry"
+                output += "Stay tuned more stuff soon."
+            elif Choice2 == 2:
+                output += "Player used Focus+slash and dealt 90 damge"
+                output += "Enemy had 75 HP,ended up with less than 0 and died "
+                output += "Well that was Easy Earned:weapons:stone sword abilities: Parry"
+                output += "Stay tuned more stuff soon."
+            elif Choice2 == 3:
+                output += "Player used Ball Throw and dealt 45 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) "
+                output += "Player had 30 HP and ended up with less than 0 Player collapsed"
+                output += "Game over x_x"
+            elif Choice2 == 4:
+                output += "Player used Focus+Ball Throw and dealt 60 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) and dealt 120 damge "
+                output += "Player had 30 HP and ended up with less than 0 Player collapsed"
+                output += "Game over x_x"            
+        elif Choice1 == 2:
+            output += "Player used Focus+Slash and dealt 90 damge"
+            output += "Enemy used Focus+Slash(stone sword) and dealt 120 damge"
+            output += "Player stats: 30 HP 55 stamina. you will see Enemy stats: 60 HP 55 Stamina. LOSER You wont get to my king"
+            if Choice2 == 1:
+                output += "Player used slash and dealt 75 damge"
+                output += "Enemy had 60 HP,ended up with less than 0 and died "
+                output += "Well that was Easy Earned:weapons:stone sword abilities: Parry"
+                output += "Stay tuned more stuff soon."
+            elif Choice2 == 2:
+                output += "Player used Focus+Slash and dealt 90 damge"
+                output += "Enemy had 60 HP,ended up with less than 0 and died "
+                output += "Well that was Easy Earned:weapons:stone sword abilities: Parry"
+                output += "Stay tuned more stuff soon."
+            elif Choice2 == 3:
+                output += "Player used Ball Throw and dealt 45 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) "
+                output += "Player had 30 HP and ended up with less than 0 Player collapsed"
+                output += "Game over x_x"
+            elif Choice2 == 4:
+                output += "Player used Focus+Ball Throw and dealt 60 damge"
+                output += "Enemy had 60 HP,ended up with 0 and died "
+                output += "Well that was easy Earned:weapons:Stone Sword abilities: Parry"
+                output += "Stay tuned more stuff soon." 
+            elif Choice1 == 3:
+             output += "Player used Ball Throw and dealt 45 damge"
+             output += "Enemy used Focus+Slash(stone sword) and dealt 120 damge"
+             output += "Player stats: 30 HP 70 stamina. you will see Enemy stats: 105 HP 55 Stamina. LOSER You wont get to my king"
+            if Choice2 == 1:
+                output += "Player used slash and dealt 75 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) abd dealt 120 damge "
+                output += "Player had 30 HP , ended up with 0 and died"
+                output += "Game over x_x"
+            elif Choice2 == 2:
+                output += "Player used Focus+Slash and dealt 90 damge"
+                output += "Enemy used Focus+Slash(Stone Sword) and dealt 120 damge "
+                output += "Player had 30 HP,ended with less than 0 and died"
+                output += "Game over x_x"
+            elif Choice2 == 3:
+                output += "Player used Ball Throw and dealt 45 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) "
+                output += "Player had 30 HP and ended up with less than 0 Player collapsed"
+                output += "Game over x_x"
+            elif Choice2 == 4:
+                output += "Player used Focus+Ball Throw and dealt 60 damge"
+                output += "Enemy used Focus+Slash(Stone Sword) and dealt 120 damge "
+                output += "Player had 30 HP ,ended with less than 0 and died"
+                output += "Game over x_x"
+            elif Choice1 == 4:
+             output += "Player used Ball Throw and dealt 60 damge"
+             output += "Enemy used Focus+Slash(stone sword) and dealt 120 damge"
+             output += "Player stats: 30 HP 70 stamina. you will see Enemy stats: 90 HP 55 Stamina. LOSER You wont get to my king"
+            if Choice2 == 1:
+                output += "Player used slash and dealt 75 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) abd dealt 120 damge "
+                output += "Player had 30 HP , ended up with 0 and died"
+                output += "Game over x_x"
+            elif Choice2 == 2:
+                output += "Player used Focus+Slash and dealt 90 damge"
+                output += "Enemy used Focus+Slash(Stone Sword) and dealt 120 damge "
+                output += "Player had 30 HP,ended with less than 0 and died"
+                output += "Game over x_x"
+            elif Choice2 == 3:
+                output += "Player used Ball Throw and dealt 45 damge"
+                output += "Enemy Used Focus+Slash(Stone Sword) "
+                output += "Player had 30 HP and ended up with less than 0 Player collapsed"
+                output += "Game over x_x"
+            elif Choice2 == 4:
+                output += "Player used Focus+Ball Throw and dealt 60 damge"
+                output += "Enemy used Focus+Slash(Stone Sword) and dealt 120 damge "
+                output += "Player had 30 HP ,ended with less than 0 and died"
+                output += "Game over x_x"
+    return render_template("rpgwone.html", output=output)
+
 @app.route("/daily", methods=["GET", "POST"])
 def daily():
     questions = [
