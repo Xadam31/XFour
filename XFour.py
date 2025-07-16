@@ -276,7 +276,7 @@ def daily():
         {
             "question": "What is the string variable type?",
             "options": ["it is a type that represents words and typed like this x = 'anything here'", "it is a type that represents numbers and typed like x = any number here", "it is a type that is used to represent numbers entirely and typed like x = any number.any number from 0 to 9", ""],
-            "answer": "str"
+            "answer": "it is a type that represents words and typed like this x = 'anything here'"
         }
     ]
 
