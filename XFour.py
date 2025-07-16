@@ -144,11 +144,6 @@ def rpgfront():
             "><button>Go to starter place</button></a>"
         else:
              output += "Invalid move selection.<br>"
-
-
-
-            
-
     elif choice1 == '2':
             output += "Skipping tutorial.. <a href=""/rpgwone""><button>Go to starter place</button></a>"
     else:
@@ -159,8 +154,8 @@ def rpgfront():
 def rpgwone():
     output = ""
     if request.method == "POST":
-        Choice1 = request.form.get("choice1", "")
-        Choice2 = request.form.get("choice2", "")
+        Choice1 = request.form.get("Choice1", "")
+        Choice2 = request.form.get("Choice2", "")
         output += "This is a serious fight. Your attacks have to be good."
         output += "Player stats: 150 HP 70 Stamina. phrase: I am unstoppable"
         output += "Enemy stats: 150 HP 70 Stamina. You wont get to my king."
