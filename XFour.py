@@ -140,17 +140,18 @@ def rpgfront():
                  output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
                  output += "Terry had 40 HP and collapsed. 💥<br>"
                  output += f"🎉 {name} is victorious over Terry! 🎉<br>"
-            else:
-                output += "Invalid move selection.<br>"
-
-
-            output += "<a href=""/rpgwone"
+                 output += "<a href=""/rpgwone"
             "><button>Go to starter place</button></a>"
+        else:
+             output += "Invalid move selection.<br>"
+
+
+
             
 
-        elif choice1 == "2":
-            output += "Skipping tutorial.. <a href="/"><button>Go to starter place</button></a>"
-        else:
+    elif choice1 == "2":
+            output += "Skipping tutorial.. <a href=""/rpgwone""><button>Go to starter place</button></a>"
+    else:
             output += "Invalid choice for tutorial."
 
     return render_template("rpgfront.html", output=output)
