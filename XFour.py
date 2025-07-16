@@ -144,7 +144,8 @@ def rpgfront():
                 output += "Invalid move selection.<br>"
 
 
-            output += "<a href="/rpgwone;"><button>Go to starter place</button></a>"
+            output += "<a href=""/rpgwone"
+            "><button>Go to starter place</button></a>"
             
 
         elif choice1 == "2":
