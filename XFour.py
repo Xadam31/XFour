@@ -212,6 +212,40 @@ def daily():
                 score += 1
         return render_template("daily.html", questions=questions, score=score)
     return render_template("daily.html", questions=questions)
+@app.route("/xchat", methods=["GET", "POST"])
+def xchat():
+    chat_log = []
+
+    if request.method == "POST":
+        user_message = request.form.get("message", "")
+        if user_message:
+            # Add user's message to the chat log
+            chat_log.append(f"You: {user_message}")
+
+            # Simple Terry logic
+            response = generate_terry_response(user_message)
+            chat_log.append(f"Master Terry: {response}")
+
+    return render_template("xchat.html", chat_log=chat_log)
+
+
+def generate_terry_response(message):
+    message = message.lower()
+    if "help" in message or "what" in message:
+        return "Stay focused. Your next move decides your fate."
+    elif "xlegend" in message:
+        return "You found an easter egg are you a friend of mine? because only friends know XLegend the all powerful warrior"
+    elif "hello" in message:
+        return "Greetings, warrior. Ready to train again?"
+    elif "who are you" in message:
+        return "I am Master Terry. Keeper of stones and secrets."
+    elif "who is xlegend?" in message:
+        return "He is the ALL powerful warrior he fought aliens demons and more horrifying things just to keep your adventure going"
+    elif "tired" in message:
+        return "Rest if you must. But victory waits for no one."
+    else:
+        return "Interesting... but I have no clue what you're talking about."
+
 
 @app.route("/learnpython")
 def learnpython():

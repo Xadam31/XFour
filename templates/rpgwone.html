@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World 2 - RPG</title>
+  <style>
+    body {
       background-color: #0e0e0e;
       color: #f5425d;
       font-family: monospace;
@@ -33,35 +33,43 @@
       padding: 20px;
       border-radius: 8px;
     }
-    </style>
+  </style>
 </head>
 <body>
-    <h3>World 2</h3>
-    <h3>..../Castle Back\....</h3>
-    <p>Weapons:wooden sword and ball</p>
-    <p>A swordsman decided to attack You!</p>
-    <label for="">Choose attack 1</label>
-    <select name="Choice1" id="">
-        <option value="Choice1">Slash</option>
-                <option value="Choice1">Focus+Slash</option>
-                <option value="Choice1">Ball Throw</option>
-                <option value="Choice1">Focus+Ball Throw</option>
 
+  <h1>World 2</h1>
+  <button>Back home</button>
+  <h2>..../Castle Back\\....</h2>
+  <p>Weapons: Wooden Sword and Ball</p>
+  <p>A swordsman decided to attack you!</p>
+
+  <!-- ✅ Wrap in form -->
+  <form method="POST">
+    <label>Choose attack 1:</label><br>
+    <select name="choice1">
+      <option value="1">Slash</option>
+      <option value="2">Focus + Slash</option>
+      <option value="3">Ball Throw</option>
+      <option value="4">Focus + Ball Throw</option>
     </select><br>
-        <label for="">Choose attack 2</label>
-    <select name="Choice2" id="">
-        <option value="Choice2">Slash</option>
-                <option value="Choice2">Focus+Slash</option>
-                <option value="Choice2">Ball Throw</option>
-                <option value="Choice2">Focus+Ball Throw</option><br>
-                
-                
-    </select>
+
+    <label>Choose attack 2:</label><br>
+    <select name="choice2">
+      <option value="1">Slash</option>
+      <option value="2">Focus + Slash</option>
+      <option value="3">Ball Throw</option>
+      <option value="4">Focus + Ball Throw</option>
+    </select><br>
+
     <button type="submit">Start</button>
-      {% if output %}
+  </form>
+
+  <!-- ✅ Output -->
+  {% if output %}
   <div class="output">
     {{ output|safe }}
   </div>
   {% endif %}
+
 </body>
 </html>
