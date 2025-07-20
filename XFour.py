@@ -273,8 +273,8 @@ def generate_XLegend_response(message):
         return "sure username:Adam1gamingzain displayname:XLegend"
     elif "monkey" or "monke" in message:
         return "EASTER EGG B.A.D INCOMING"
-    elif "what words do you like saying" in message:
-        return "hello would you like to die"
+    elif "BAD incoming" in message:
+        return "I CAN FEEL MY TRUE PHASE AWAKENING NOW I SHALL KILL YOU (sends DTDS) HELLO WOULD YOU LIKE TO DIE"
     else:
         return "i forgot to program myself to answer to this (sorry)"
      
