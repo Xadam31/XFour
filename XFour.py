@@ -130,7 +130,7 @@ def rpgfront():
             output += 'Skipping tutorial.. <a href="/rpgwone"><button>Go to next area</button></a>'
         else:
             output += "Invalid choice for tutorial."
-    return render_template("rpgfront.html", output=output)
+    return render_template("rpgfront.html", output=output, player_hp=30, enemy_hp=75)
 
 @app.route("/rpgwone", methods=["GET", "POST"])
 def rpgwone():
@@ -178,7 +178,7 @@ def rpgwone():
             output += "Player had 30 HP and collapsed. Game Over. x_x<br>"
         else:
             output += "Invalid second move.<br>"
-    return render_template("rpgwone.html", output=output)
+    return render_template("rpgwone.html", output=output, player_hp=30, enemy_hp=75)
 
 @app.route("/daily", methods=["GET", "POST"])
 def daily():
@@ -212,41 +212,73 @@ def daily():
                 score += 1
         return render_template("daily.html", questions=questions, score=score)
     return render_template("daily.html", questions=questions)
+
 @app.route("/xchat", methods=["GET", "POST"])
 def xchat():
     chat_log = []
-
     if request.method == "POST":
         user_message = request.form.get("message", "")
         if user_message:
-            # Add user's message to the chat log
             chat_log.append(f"You: {user_message}")
-
-            # Simple Terry logic
             response = generate_terry_response(user_message)
             chat_log.append(f"Master Terry: {response}")
-
     return render_template("xchat.html", chat_log=chat_log)
-
 
 def generate_terry_response(message):
     message = message.lower()
     if "help" in message or "what" in message:
         return "Stay focused. Your next move decides your fate."
+    elif "Mate who is trick" in message:
+        return "You shouldn't talk about him... he's no one. Definitely."
+    elif "Tell me who is trick" in message:
+        return "He is one... You will meet him in World 7. No more info!"
+    elif "Terry what happened to jerry?" in message:
+        return "He died fighting TRICK, lord of the unknown team."
+    elif "I would like to talk with XLegend" in message:
+        if "you are weak" in message:
+            return "I shall banish you"
+        return "Hello it's me. What do you want? One answer only."
     elif "xlegend" in message:
-        return "You found an easter egg are you a friend of mine? because only friends know XLegend the all powerful warrior"
+        return "You found an easter egg. Only my friends know XLegend!"
     elif "hello" in message:
         return "Greetings, warrior. Ready to train again?"
     elif "who are you" in message:
         return "I am Master Terry. Keeper of stones and secrets."
     elif "who is xlegend?" in message:
-        return "He is the ALL powerful warrior he fought aliens demons and more horrifying things just to keep your adventure going"
+        return "He is the ALL powerful warrior. He fought aliens, demons, and more to keep your adventure alive."
     elif "tired" in message:
         return "Rest if you must. But victory waits for no one."
     else:
         return "Interesting... but I have no clue what you're talking about."
-
-
+@app.route("/XLegend", methods=["POST", "GET"])
+def XLegend():
+    chat_log = []
+    if request.method == "POST":
+        user_message = request.form.get("message", "")
+        if user_message:
+            chat_log.append(f"You: {user_message}")
+            response = generate_XLegend_response(user_message)
+            chat_log.append(f"XLegend: {response}")
+    return render_template("xchatt.html", chat_log=chat_log)
+def generate_XLegend_response(message):
+    if "can i recommend adding something" in message:
+        return "NO"
+    elif "Hello" in message:
+        return "Yo there is a chest in the castle grab it you will get smth OP"
+    elif "can i fight you" in message:
+        return "we will team up in world 9 for something cant tell you find out yourself"
+    elif "why did you make this website" in message:
+        return "to test my full potential in development"
+    elif "can i friend you in roblox" in message:
+        return "sure username:Adam1gamingzain displayname:XLegend"
+    elif "monkey" or "monke" in message:
+        return "EASTER EGG B.A.D INCOMING"
+    elif "what words do you like saying" in message:
+        return "hello would you like to die"
+    else:
+        return "i forgot to program myself to answer to this (sorry)"
+     
+     
 @app.route("/learnpython")
 def learnpython():
     return render_template("learnpython.html")

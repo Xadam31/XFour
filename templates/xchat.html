@@ -42,6 +42,8 @@
   </style>
 </head>
 <body>
+  <a href="/"><button>back home</button></a>
+
   <h1>🧙 Chat with Master Terry</h1>
 
   <div class="chat-box">
@@ -49,9 +51,13 @@
       <div class="message">{{ msg }}</div>
     {% endfor %}
   </div>
+      <a href="/xchatt"><button>
+      Talk with the Dev:3     
+    </button></a>
   <h6>:O</h6>
 
   <form method="POST">
+
     <input type="text" name="message" placeholder="Say something..." required />
     <button type="submit">Send</button>
   </form>

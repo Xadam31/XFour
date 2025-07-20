@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XChatBot - XLegend</title>
+    <style>
+        body{
+            background-color: black;
+            color: #00f7ff;
+            font-family: monospace;
+            padding: 20px ;
+        }
+        .chat-box{
+            background-color: #1a1a1a;
+            margin-bottom: 20px;
+            border: #00f7ff 1px solid;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        button{
+            background-color: #00f7ff;
+            border-color: #00f7fe;
+            border-radius: 5px;
+            padding:10px ;
+            color: black;
+            cursor: pointer;
+        }
+            .message {
+      margin: 5px 0;
+    }
+    input[type="text"]{
+        width: 80%;
+        padding: 10px;
+        color: #00f7ff;
+        background-color: #00f7fe;
+        border: #00f7fe 1px solid;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+      <div class="chat-box">
+    {% for msg in chat_log %}
+      <div class="message">{{ msg }}</div>
+    {% endfor %}
+  </div>
+  <h6>:O</h6>
+  <form method="POST">
+    <input type="text" name="message" placeholder="Hello would you like to dieXD" required>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
