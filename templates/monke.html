@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XLegend Battles 2 Quiz</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #00f7ff;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"], button {
+      background-color: #00f7ff;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #1a1a1a;
+      border-left: 4px solid #00f7ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Battles 2 OG Quiz - XLegend Edition</h1>
+  <form method="POST">
+    <div class="question">
+      <p>1. What is the main purpose of the PMFC upgrade on Dart monkey?</p>
+      <label><input type="radio" name="q1" value="a">To look cool</label><br>
+      <label><input type="radio" name="q1" value="b">Send BADs faster</label><br>
+      <label><input type="radio" name="q1" value="c">Turn all dart monkeys up to 20 to plasma super monkeys that deal insane damge</label><br>
+      <label><input type="radio" name="q1" value="d">Turns the dart monkey into the legend of the night for sometime</label><br>
+    </div>
+
+    <div class="question">
+      <p>2. Which tower has the "Homeland Defense" ability?</p>
+      <label><input type="radio" name="q2" value="a">Sniper</label><br>
+      <label><input type="radio" name="q2" value="b">Village</label><br>
+      <label><input type="radio" name="q2" value="c">Quincy</label><br>
+      <label><input type="radio" name="q2" value="d">Super Monkey</label><br>
+    </div>
+
+    <div class="question">
+      <p>3. What does DDT stand for?</p>
+      <label><input type="radio" name="q3" value="a">Dark Deadly Tower</label><br>
+      <label><input type="radio" name="q3" value="b">Dark Dirigible Titan</label><br>
+      <label><input type="radio" name="q3" value="c">Deadly Dart Trooper</label><br>
+      <label><input type="radio" name="q3" value="d">Danger Dart Trap</label><br>
+    </div>
+
+    <div class="question">
+      <p>4. Who has the drone swarm ability?</p>
+      <label><input type="radio" name="q4" value="a">Ezili</label><br>
+      <label><input type="radio" name="q4" value="b">Gwendolin</label><br>
+      <label><input type="radio" name="q4" value="c">Etienne</label><br>
+      <label><input type="radio" name="q4" value="d">Obyn Greenfoot</label><br>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+  <a href="/"><button style="background-color: #1a1a1a; color: #00f7fe; border-radius: 5px; border-color: #00f7ff;">Back home</button></a>
+
+  {% if result %}
+    <div class="result">
+      {{ result }}
+    </div>
+  {% endif %}
+
+</body>
+</html>

@@ -275,8 +275,39 @@ def generate_XLegend_response(message):
         return "EASTER EGG B.A.D INCOMING"
     elif "BAD incoming" in message:
         return "I CAN FEEL MY TRUE PHASE AWAKENING NOW I SHALL KILL YOU (sends DTDS) HELLO WOULD YOU LIKE TO DIE"
+    elif "how do i defend bads and dtds" in message:
+        return "SKILL ISSUE DETECTED. DTDS INCOMING BAD INCOMING"
+    elif "can u leak something" in message:
+        return "next tool in update 2.0 imagine saying that to an AI version of the dev"
+    elif "." in message:
+        return "? u good? should i dial 911 XD"
+    elif "who is trick" in message:
+        return "he is the leader of the so called 'unknown gang' but i have enough power to stop the whole rpg universe i'll deal with em later i guess" 
+    elif "who are you" in message:
+        return "I am Adam the dev himself dont expose me if i find out ur banned from my website"  
+    elif "what are you" in message:
+        return "a monke gamer"
     else:
         return "i forgot to program myself to answer to this (sorry)"
+@app.route('/quiz', methods=['GET', 'POST'])
+def quiz():
+    result = None
+    if request.method == 'POST':
+        answers = {
+            'q1': 'c',
+            'q2': 'b',
+            'q3': 'b',
+            'q4': 'c'
+        }
+
+        score = 0
+        for key in answers:
+            if request.form.get(key) == answers[key]:
+                score += 1
+
+        result = f"You got {score}/4 correct! {'🐵 MONKEY LEGEND' if score == 4 else 'Keep grinding!'}"
+
+    return render_template("monke.html", result=result)
      
      
 @app.route("/learnpython")
