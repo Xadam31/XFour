@@ -226,7 +226,7 @@ def xchat():
 
 def generate_terry_response(message):
     message = message.lower()
-    if "help" in message or "what" in message:
+    if "help" in message or "what can i do" in message:
         return "Stay focused. Your next move decides your fate."
     elif "Mate who is trick" in message:
         return "You shouldn't talk about him... he's no one. Definitely."
@@ -271,13 +271,13 @@ def generate_XLegend_response(message):
         return "to test my full potential in development"
     elif "can i friend you in roblox" in message:
         return "sure username:Adam1gamingzain displayname:XLegend"
-    elif "monkey" or "monke" in message:
+    elif "monkey" in message:
         return "EASTER EGG B.A.D INCOMING"
     elif "BAD incoming" in message:
         return "I CAN FEEL MY TRUE PHASE AWAKENING NOW I SHALL KILL YOU (sends DTDS) HELLO WOULD YOU LIKE TO DIE"
     elif "how do i defend bads and dtds" in message:
         return "SKILL ISSUE DETECTED. DTDS INCOMING BAD INCOMING"
-    elif "can u leak something" in message:
+    elif "can you leak something" in message:
         return "next tool in update 2.0 imagine saying that to an AI version of the dev"
     elif "." in message:
         return "? u good? should i dial 911 XD"
@@ -295,7 +295,7 @@ def quiz():
     if request.method == 'POST':
         answers = {
             'q1': 'c',
-            'q2': 'b',
+            'q2': 'a',
             'q3': 'b',
             'q4': 'c'
         }
