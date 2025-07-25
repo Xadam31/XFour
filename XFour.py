@@ -1,4 +1,5 @@
-from flask import Markup, Flask, render_template, request
+from flask import Flask, render_template, request
+from markupsafe import Markup
 
 app = Flask(__name__)
 history = []
@@ -257,10 +258,10 @@ def XLegend():
         user_message = request.form.get("message", "")
         if user_message:
             chat_log.append(f"You: {user_message}")
-            response = generate_XLegend_response(user_message)
+            response = generate(user_message)
             chat_log.append(f"XLegend: {response}")
     return render_template("xchatt.html", chat_log=chat_log)
-def generate_XLegend_response(message):
+def  generate(message):
     if "can i recommend adding something" in message:
         return "NO"
     elif "Hello" in message:
@@ -288,7 +289,7 @@ def generate_XLegend_response(message):
     elif "what are you" in message:
         return "a monke gamer"
     elif "show it" in message.lower():
-        respone = Markup('.<a href="/book"><button>Xlegends book</button></a>')
+        return Markup('<a href="/book"><button>Xlegends book</button></a>')
     else:
         return "i forgot to program myself to answer to this (sorry)"
 @app.route('/quiz', methods=['GET', 'POST'])
