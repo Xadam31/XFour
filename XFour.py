@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Markup, Flask, render_template, request
 
 app = Flask(__name__)
 history = []
@@ -287,6 +287,8 @@ def generate_XLegend_response(message):
         return "I am Adam the dev himself dont expose me if i find out ur banned from my website"  
     elif "what are you" in message:
         return "a monke gamer"
+    elif "show it" in message.lower():
+        respone = Markup('.<a href="/book"><button>Xlegends book</button></a>')
     else:
         return "i forgot to program myself to answer to this (sorry)"
 @app.route('/quiz', methods=['GET', 'POST'])
@@ -329,6 +331,10 @@ def patch_notes():
 @app.route("/mpatch.notes")
 def patchnotesm():
     return render_template("mainpatch.html")
+@app.route("/book")
+def book():
+    return render_template("book.html")
+
 
 if __name__ == "__main__":
     app.run()
