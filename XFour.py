@@ -311,7 +311,29 @@ def quiz():
         result = f"You got {score}/4 correct! {'🐵 MONKEY LEGEND' if score == 4 else 'Keep grinding!'}"
 
     return render_template("monke.html", result=result)
-     
+@app.route("/special", methods=['POST', 'GET'])
+def special():
+    output = ""
+    if request.method == "POST":
+        pclass = request.form.get("pclass", "")        
+        output += "Hardest boss you need to know the strongest attacks. We gave you insane powers for this boss.<br>"
+        output += "Player stats: 1,000,000,000 HP, Stamina 160 (max)<br>"
+        output += "Guest stats: 5,000,000,000<br>"
+        output += "You might need to ask XLegend for help in something, who knows.<br>"
+        if pclass == '1':
+            output += "Good choice we give u Venomous dagger , YBlade and demonic dagger"
+            output += '<label>which attack do u choose</label><br> <select name="Attack1"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
+            output += '<label>which attack do u choose</label><br> <select name="Attack2"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
+            output += '<label>which attack do u choose</label><br> <select name="Attack3"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
+            output += '<label>which attack do u choose</label><br> <select name="Attack4"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
+            output += '<button type="sumbit">Start</button>'
+        elif pclass == '2':
+            output +="Insane choice u have the same class as the boss we give u 5 spells Cast Mega-Fireball , Summon Magic wand , TICK TACK TOCK , FLINGITY BREAKITY SMASHITY Note:under development still"
+
+
+
+    return render_template("special.html", output=output)
+    
      
 @app.route("/learnpython")
 def learnpython():
@@ -335,6 +357,18 @@ def patchnotesm():
 @app.route("/book")
 def book():
     return render_template("book.html")
+@app.route("/track1")
+def track1():
+    return '''
+    <html>
+      <body>
+        <audio controls>
+          <source src="/static/Powertrip.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </body>
+    </html>
+    '''
 
 
 if __name__ == "__main__":
