@@ -317,7 +317,7 @@ def special():
     if request.method == "POST":
         pclass = request.form.get("pclass", "")        
         output += "Hardest boss you need to know the strongest attacks. We gave you insane powers for this boss.<br>"
-        output += "Player stats: 1,000,000,000 HP, Stamina 160 (max)<br>"
+        output += "Player stats: 3,000,000,000 HP, Stamina 160 (max)<br>"
         output += "Guest stats: 5,000,000,000<br>"
         output += "You might need to ask XLegend for help in something, who knows.<br>"
         if pclass == '1':
@@ -327,6 +327,57 @@ def special():
             output += '<label>which attack do u choose</label><br> <select name="Attack3"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
             output += '<label>which attack do u choose</label><br> <select name="Attack4"><option value="1">venomous backstab</option> <option value="2">YSlash</option> <option value="3">Demonic stab rush </option> </select>'
             output += '<button type="sumbit">Start</button>'
+            Attack1 = request.form.get("Attack1" , "")
+            Attack2 = request.form.get("Attack2" , "")
+            Attack3 = request.form.get("Attack4" , "")
+            Attack4 = request.form.get("Attack4" , "")
+
+
+
+            if Attack1 == '1':
+                output += "Player used venomous backstab and dealt 600,000,000 damge and inflicted poison 19(3 rounds)"
+                output += "Guest used Ultimatiam Fire ball and dealt 650,000,000 damge and inflicted burning 16(2 rounds)"
+                output += "Player got burned and lost 20,000,000 and Guest got poisoned and lost 20,000,000"
+                output += "Player stats :2,330,000,000 HP"
+                output += "Guest stats : 4,380,000,000 HP"
+                output += "Path incomplete sorry but i work as hard as i can day and night "
+                if Attack2 == '1':
+                     output += "Player used venomous backstab and dealt 600,000,000 damge (couldnt inflict poison since it still is on for 2 more rounds)"
+                     output += "Guest used Summon friend  and XLegend entered the battlefield XLegend used HELLO WOULD U LIKE TO DIE player said no XLegend broke PLayer's bones and dealt 2,000,000,000 damge"
+                     output += "Player stats : 310,000,000"
+                     output += "Guest stats : 3,760,000,000"
+                                          
+                     if Attack3 == '1':
+                         output += "Player used venomous backstab and dealt 600,000,000 damge (couldnt inflict poison since it still is on for 2 more rounds)"
+                         output += "Guest used Magic brew and gave it to XLegend, XLegend used super smash Player couldnt handle all of the damge"
+                         output += "Player collapsed GAME OVER Too bad u didnt summon him with something"
+                elif Attack2 == '2':
+                     output += "Player used YSlash and deaalt 1,500,000,000 damge and summoned YZain"
+                     output += "XLegend used FEEL MY WRATH and doubled his team's damge and healed Guest, Guest used I CAST DEATH TO YOU sacrificed XLegend to kill YZain"
+                     output += "Stats got scattered"
+                     output += "Player stats : 1,000,000,000"
+                     output += "Guest stats : 1,000,000,000"
+                     output += "Guest: How dare you summon him"
+                     output += "Player: I do what i want im a swordsman who cares about your unpro magic skills"
+                     output += "XLegend entered the battlefield"
+                     
+                     if Attack3 == '1':
+                         output += "Player used venomous backstab and dealt 600,000,000 damge (couldnt inflict poison since it still is on for 2 more rounds)"
+                         output += "Guest used Magic brew and gave it to XLegend, XLegend used super smash Player couldnt handle all of the damge"
+                         output += "Player collapsed GAME OVER Too bad u didnt summon him with something"
+                     elif Attack3 ==   '2':
+                         output += "Player used YSlash and dealt.... XLegend Deflected the slash and it went to spa...... YZain Re-Deflected the attack XLegend Re-R...... Guest used Stop time"
+                         output += "Chaos happened both are now 100,000,000 HP"
+                     if Attack4 == '1':
+                         output += "Player used venomous backst...... XLegend Grabbed Player and smashed him"
+                         output += "GAME OVER u were almost there u could have done it The boss was one-shot maybe u can do it in Attempt 2"
+                     elif Attack4 == '2':
+                         output += "Player used YSlash and dea..... XLEGEND TOOK THE HIT "
+                         output += "Gue..... XLegend used: XFURY AND dealt YZain DEFLECTED IT XLEGEND USE HELLO WOULD U LIKE TO DIE.................................... DRAW"
+                         output += "congratulations u got a draw now..."
+                         output += "XLegend's Discord ID: xlegend_ad"
+                         output += "feel free to add me a low chance of me adding u but game is game"
+                           
         elif pclass == '2':
             output +="Insane choice u have the same class as the boss we give u 5 spells Cast Mega-Fireball , Summon Magic wand , TICK TACK TOCK , FLINGITY BREAKITY SMASHITY Note:under development still"
 
@@ -357,6 +408,9 @@ def patchnotesm():
 @app.route("/book")
 def book():
     return render_template("book.html")
+@app.route("/credits")
+def credits():
+    return render_template("Credits.html")
 @app.route("/track1")
 def track1():
     return '''
