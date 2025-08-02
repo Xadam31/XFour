@@ -115,6 +115,7 @@ def rpgfront():
                     output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
                     output += "Terry had 55 HP and collapsed. 💥<br>"
                     output += f"🎉 {name} is victorious over Terry! 🎉<br>"
+                    output += '<a href="/rpgwone"><button>Go to next area</button></a>'
             elif choice2 == "2":
                 output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
                 output += "Terry did the same. Both have HP 40, Stamina 30.<br>"
@@ -122,11 +123,12 @@ def rpgfront():
                     output += f"{name} used Ball Throw and dealt 45 damage!<br>"
                     output += "Terry had 40 HP and collapsed. 🎉<br>"
                     output += f"🎊 Congratulations {name}, you beat Terry! 🎊<br>"
+                    output += '<a href="/rpgwone"><button>Go to next area</button></a>'
                 elif choice3 == "2":
                     output += f"{name} used Focus + Ball Throw and dealt 60 damage!<br>"
                     output += "Terry had 40 HP and collapsed. 💥<br>"
                     output += f"🎉 {name} is victorious over Terry! 🎉<br>"
-            output += '<a href="/rpgwone"><button>Go to next area</button></a>'
+                    output += '<a href="/rpgwone"><button>Go to next area</button></a>'
         elif choice1 == "2":
             output += 'Skipping tutorial.. <a href="/rpgwone"><button>Go to next area</button></a>'
         else:
