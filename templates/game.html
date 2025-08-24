@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XFour Mini Game</title>
+    <style>
+        body {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', monospace;
+}
+
+#game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: #000;
+    border: 2px solid #0ff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px #0ff;
+}
+
+.neon-btn {
+    position: absolute;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #0ff;
+    background-color: #222;
+    border: 2px solid #0ff;
+    border-radius: 12px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    transition: transform 0.1s;
+}
+
+.neon-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.neon-text {
+    color: #0ff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Game container -->
+    <div id="game-container">
+        <button id="game-btn">Catch Me!</button>
+        <div id="score">Score: 0</div>
+        <div id="timer">Time: 30s</div>
+    </div>
+    <audio id="game-audio" src="{{ url_for('static', filename='Clubstep.mp3') }}"></audio>
+
+
+    <!-- Link your JS -->
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>

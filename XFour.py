@@ -408,6 +408,10 @@ def notepad():
 @app.route("/learnpython")
 def learnpython():
     return render_template("learnpython.html")
+@app.route("/game")
+def game():
+    return render_template("game.html")
+
 
 @app.route("/aboutm")
 def aboutm():
