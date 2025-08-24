@@ -386,6 +386,23 @@ def special():
 
 
     return render_template("special.html", output=output)
+notes_file = "notes.txt"  # file to save notes
+
+@app.route("/notepad", methods=["GET", "POST"])
+def notepad():
+    content = ""
+    if request.method == "POST":
+        content = request.form.get("content", "")
+        with open(notes_file, "w", encoding="utf-8") as f:
+            f.write(content)
+    else:
+        try:
+            with open(notes_file, "r", encoding="utf-8") as f:
+                content = f.read()
+        except FileNotFoundError:
+            content = ""
+    return render_template("notepad.html", content=content)
+
     
      
 @app.route("/learnpython")
