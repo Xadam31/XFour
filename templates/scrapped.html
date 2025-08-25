@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Button</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        #btn {
+            position: absolute;
+            padding: 10px 20px;
+            background: lime;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Can you find the button? 👀</h1>
+    <button id="btn">Click me!</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - btn.clientWidth);
+            const y = Math.random() * (window.innerHeight - btn.clientHeight);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+
+        btn.addEventListener("mouseover", moveButton);
+        btn.addEventListener("click", () => {
+            alert("🎉 You found the button!");
+        });
+
+        moveButton(); // place it randomly at start
+    </script>
+</body>
+</html>

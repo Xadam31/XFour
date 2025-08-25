@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request , flash , redirect
 from markupsafe import Markup
 
 app = Flask(__name__)
@@ -403,8 +403,34 @@ def notepad():
             content = ""
     return render_template("notepad.html", content=content)
 
-    
-     
+    app.secret_key = "your_secret_key_here"  # needed for flash messages
+
+# simple list to store feedback (replace with database later if you want)
+feedback_list = []
+
+@app.route("/feedback", methods=["GET", "POST"])
+def feedback():
+    if request.method == "POST":
+        name = request.form.get("name", "")
+        email = request.form.get("email", "")
+        message = request.form.get("message", "")
+
+        # store feedback
+        feedback_list.append({
+            "name": name,
+            "email": email,
+            "message": message
+        })
+
+        flash("Thanks for your feedback! 💡")
+        return redirect("/feedback")  # reloads the page to show flash message
+
+    # render the HTML template
+    return render_template("feedback.html")
+
+@app.route("/scrapped")
+def scrap():
+    return render_template("scrapped.html")  
 @app.route("/learnpython")
 def learnpython():
     return render_template("learnpython.html")
