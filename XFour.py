@@ -292,6 +292,8 @@ def  generate(message):
         return "a monke gamer"
     elif "show it" in message.lower():
         return Markup('<a href="/book"><button>Xlegends book</button></a>')
+    elif "music player" in message.lower():
+        return Markup('<a href="/music"><button>music player</button></a>')
     else:
         return "i forgot to program myself to answer to this (sorry)"
 @app.route('/quiz', methods=['GET', 'POST'])
@@ -427,6 +429,9 @@ def feedback():
 
     # render the HTML template
     return render_template("feedback.html")
+@app.route("/music")
+def music():
+    return render_template("music.html")
 
 @app.route("/scrapped")
 def scrap():
